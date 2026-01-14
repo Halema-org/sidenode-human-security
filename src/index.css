@@ -1,0 +1,258 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --bg: #0f172a;
+  --bg-card: #1e293b;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: var(--bg-card);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-secondary);
+}
+
+main {
+  padding: 3rem 0;
+}
+
+.email-form {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  padding: 0.75rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.results {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.results-header {
+  margin-bottom: 1.5rem;
+}
+
+.results-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.breach-count {
+  color: var(--text-secondary);
+}
+
+.breach-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--danger);
+}
+
+.breach-card.safe {
+  border-left-color: var(--success);
+}
+
+.breach-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.breach-title h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.breach-domain {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.breach-date {
+  text-align: right;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.breach-description {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.data-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.data-type {
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-card);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--warning);
+}
+
+.breach-stats {
+  display: flex;
+  gap: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.security-tips {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.security-tips h2 {
+  margin-bottom: 1.5rem;
+}
+
+.tips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.tip {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+}
+
+.tip-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tip h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tip p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+footer {
+  background: var(--bg-card);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+.error-message {
+  background: var(--danger);
+  color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+  }
+
+  .breach-header {
+    flex-direction: column;
+  }
+
+  .breach-date {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+
+  .tips-list {
+    grid-template-columns: 1fr;
+  }
+}
